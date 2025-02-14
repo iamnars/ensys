@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
-            $table->string('schedule_code')->unique(); 
-            $table->foreignId('subject_id')->references('subject_id')->on('subjects')->onDelete('cascade');
-            $table->foreignId('faculty_number')->nullable()->constrained('employees')->onDelete('set null');
-            $table->foreignId('room_id')->nullable()->constrained()->onDelete('set null');
-            $table->enum('day', ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']);
+            $table->string('schedule_code')->nullable()->unique(); 
+            $table->string('subject_code')->nullable();
+            $table->foreign('subject_code')->references('subject_code')->on('subjects')->onDelete('set null');
+            $table->string('faculty_number')->nullable();
+            $table->foreign('faculty_number')->references('employee_number')->on('employees')->onDelete('set null');
+            $table->string('room',10);
+            $table->string('day',5);
             $table->time('start_time');
             $table->time('end_time');
             $table->integer('semester');
