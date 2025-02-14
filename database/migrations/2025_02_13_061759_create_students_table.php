@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('address')->nullable();
             $table->string('program');
             $table->integer('year_level');
-            $table->enum('status', ['active', 'inactive', 'graduated', 'dropped'])->default('active');
+            $table->enum('status', ['new', 'old', 'graduated', 'dropped'])->default('new');
             $table->timestamp('enrolled_at')->nullable();
             $table->string('guardian_name')->nullable();
             $table->string('guardian_contact')->nullable();
