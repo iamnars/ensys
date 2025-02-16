@@ -3,7 +3,7 @@
                 <ul class="nav metismenu" id="side-menu">
                     <li class="nav-header">
                         <div class="dropdown profile-element">
-                            <img alt="image" class="rounded-circle" src="img/profile_small.jpg"/>
+                            <img alt="image" class="rounded-circle" src="{{asset('img/profile_small.jpg')}}"/>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="block m-t-xs font-bold">David Williams</span>
                                 <span class="text-muted text-xs block">BSIT Professor <b class="caret"></b></span>
@@ -17,17 +17,18 @@
                             </ul>
                         </div>
                         <div class="logo-element">
-                            <img src="img/mpc_logo.png" style="width: 100%; max-width: 50px; height: auto;">
+                            <img src="{{asset('img/mpc_logo.png')}}" style="width: 100%; max-width: 50px; height: auto;">
                         </div>
                     </li>
+
                     <li class="active">
                         <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Classes Handled</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li class="active"><a href="{{ url('/grading') }}">CC100IT1A124</a></li>
-                            <li><a href="dashboard_2.html">CC101IT1A124</a></li>
-                            <li><a href="dashboard_3.html">CC103IT2A124</a></li>
-                            <li><a href="dashboard_4_1.html">ELEC2IT2A124</a></li>
-                            <li><a href="dashboard_5.html">IM102IT3A124</a></li>
+                            @forelse($schedules as $schedule)
+                                <li><a href="{{ url('/grading/' . $schedule->schedule_code) }}">{{ $schedule->schedule_code }}</a></li>
+                            @empty
+                                <li class="text-center" style="list-style: none;">No classes assigned.</li>
+                            @endforelse
                         </ul>
                     </li>
                     

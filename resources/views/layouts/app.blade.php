@@ -16,105 +16,106 @@
 
     <title>@yield('title')</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('font-awesome/css/font-awesome.css') }}" rel="stylesheet">
 
     <!-- Toastr style -->
-    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="{{ asset('css/plugins/toastr/toastr.min.css') }}" rel="stylesheet">
 
     <!-- Gritter -->
-    <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="{{ asset('js/plugins/gritter/jquery.gritter.css') }}" rel="stylesheet">
 
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 </head>
 
 <body>
-    <div id="wrapper">
-        @include('includes.sidebar')
+        <div id="wrapper">
+            @include('includes.teachersidebar')
 
-        <div id="page-wrapper" class="gray-bg dashbard-1">
-            @include('includes.topbar')
-            <div class="row  border-bottom white-bg dashboard-header">
-                @yield('contentA')
+            <div id="page-wrapper" class="gray-bg dashbard-1">
+                @include('includes.topbar')
+                {{-- <div class="row  border-bottom white-bg dashboard-header"> --}}
+                    @yield('contentA')
 
+                {{-- </div> --}}
+
+                {{-- <div class="wrapper wrapper-content"> --}}
+                    @yield('contentB')
+                {{-- </div> --}}
+                
+            
             </div>
-
-            <div class="wrapper wrapper-content">
-                @yield('contentB')
-            </div>
-               
-           
-        </div>
-            <div class="footer">
-                <div class="float-right">
-                    10GB of <strong>250GB</strong> Free.
+                <div class="footer">
+                    <div class="float-right">
+                        10GB of <strong>250GB</strong> Free.
+                    </div>
+                    <div>
+                        <strong>Copyright</strong> Mindanao Polytechnic College &copy; 2025-2026
+                    </div>
                 </div>
-                <div>
-                    <strong>Copyright</strong> Mindanao Polytechnic College &copy; 2025-2026
-                </div>
+            </div>
+            
+            
+        </div>
+    
+        <!-- Toast notification -->
+
+        <div class="toast toast toast-bootstrap hide" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top:20px; right:20px">
+            <div class="toast-header">
+                <i class="fa fa-square text-navy"> </i>
+                <strong class="mr-auto m-l-sm">Notification</strong>
+                <small>1 min ago</small>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body">
+            Welcome to <strong>MPCOGS</strong> - Responsive Online System.
             </div>
         </div>
-        
-        
-    </div>
 
-    <!-- Toast notification -->
-
-    <div class="toast toast toast-bootstrap hide" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top:20px; right:20px">
-        <div class="toast-header">
-            <i class="fa fa-square text-navy"> </i>
-            <strong class="mr-auto m-l-sm">Notification</strong>
-            <small>1 min ago</small>
-            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="toast-body">
-           Welcome to <strong>MPCOGS</strong> - Responsive Online System.
-        </div>
-    </div>
 
     <!-- Mainly scripts -->
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
+    <script src="{{ asset('js/popper.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+    <script src="{{ asset('js/plugins/metisMenu/jquery.metisMenu.js') }}"></script>
+    <script src="{{ asset('js/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
 
     <!-- Flot -->
-    <script src="js/plugins/flot/jquery.flot.js"></script>
-    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-    <script src="js/plugins/flot/jquery.flot.spline.js"></script>
-    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
-    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
+    <script src="{{ asset('js/plugins/flot/jquery.flot.js') }}"></script>
+    <script src="{{ asset('js/plugins/flot/jquery.flot.tooltip.min.js') }}"></script>
+    <script src="{{ asset('js/plugins/flot/jquery.flot.spline.js') }}"></script>
+    <script src="{{ asset('js/plugins/flot/jquery.flot.resize.js') }}"></script>
+    <script src="{{ asset('js/plugins/flot/jquery.flot.pie.js') }}"></script>
 
     <!-- Peity -->
-    <script src="js/plugins/peity/jquery.peity.min.js"></script>
-    <script src="js/demo/peity-demo.js"></script>
+    <script src="{{ asset('js/plugins/peity/jquery.peity.min.js') }}"></script>
+    <script src="{{ asset('js/demo/peity-demo.js') }}"></script>
 
     <!-- Custom and plugin javascript -->
-    <script src="js/inspinia.js"></script>
-    <script src="js/plugins/pace/pace.min.js"></script>
+    <script src="{{ asset('js/inspinia.js') }}"></script>
+    <script src="{{ asset('js/plugins/pace/pace.min.js') }}"></script>
 
     <!-- jQuery UI -->
-    <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="{{ asset('js/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 
     <!-- GITTER -->
-    <script src="js/plugins/gritter/jquery.gritter.min.js"></script>
+    <script src="{{ asset('js/plugins/gritter/jquery.gritter.min.js') }}"></script>
 
     <!-- Sparkline -->
-    <script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="{{ asset('js/plugins/sparkline/jquery.sparkline.min.js') }}"></script>
 
     <!-- Sparkline demo data  -->
-    <script src="js/demo/sparkline-demo.js"></script>
+    <script src="{{ asset('js/demo/sparkline-demo.js') }}"></script>
 
     <!-- ChartJS-->
-    <script src="js/plugins/chartJs/Chart.min.js"></script>
+    <script src="{{ asset('js/plugins/chartJs/Chart.min.js') }}"></script>
 
     <!-- Toastr -->
-    <script src="js/plugins/toastr/toastr.min.js"></script>
+    <script src="{{ asset('js/plugins/toastr/toastr.min.js') }}"></script>
 
 
     <script>
@@ -223,5 +224,7 @@
 
         });
     </script>
+
+    @yield('scripts')
 </body>
 </html>
