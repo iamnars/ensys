@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreign('subject_code')->references('subject_code')->on('subjects')->onDelete('set null');
             $table->string('faculty_number')->nullable();
             $table->foreign('faculty_number')->references('employee_number')->on('employees')->onDelete('set null');
+            $table->string('section',3);
             $table->string('room',10);
             $table->string('day',5);
             $table->time('start_time');

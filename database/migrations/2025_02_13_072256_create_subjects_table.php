@@ -15,7 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('subject_code')->nullable()->unique();
             $table->string('description');
+            $table->decimal('unit',3,2);
             $table->string('program_code');
+            $table->integer('year_level');
+            $table->integer('semester');
             $table->timestamps();
         });
     }
