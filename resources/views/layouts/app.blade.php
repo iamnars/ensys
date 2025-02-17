@@ -25,6 +25,8 @@
     <!-- Gritter -->
     <link href="{{ asset('js/plugins/gritter/jquery.gritter.css') }}" rel="stylesheet">
 
+    <link href="{{ asset(css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+
     <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
